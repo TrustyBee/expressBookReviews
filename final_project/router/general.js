@@ -42,7 +42,7 @@ public_users.get('/',function (req, res) {
 
   getBooks
   .then((books) => {
-    return res.status(200).json(books) 
+    return res.status(200).json({books}) 
   })
   .catch((error) => {
     return res.status(500).json({message: "Failed to retrieve book list."})  
@@ -80,8 +80,8 @@ public_users.get('/author/:author',function (req, res) {
   })
 
   getBooksByAuthor
-  .then((books) => {
-    return res.status(200).json(books) 
+  .then((booksbyauthor) => {
+    return res.status(200).json({booksbyauthor}) 
   })
   .catch((error) => {
     return res.status(404).json(error)  
@@ -101,8 +101,8 @@ public_users.get('/title/:title',function (req, res) {
   })
 
   getBooksByTitle
-  .then((books) => {
-    return res.status(200).json(books) 
+  .then((booksbytitle) => {
+    return res.status(200).json({booksbytitle}) 
   })
   .catch((error) => {
     return res.status(404).json(error)  
